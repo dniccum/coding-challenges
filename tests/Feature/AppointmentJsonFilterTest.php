@@ -39,3 +39,13 @@ it('builds valid SQL request with valid JSON string', function () {
 
     expect($sql)->toBe($expected);
 });
+
+
+it('throws an error when a non-existent direct column is provided', function () {
+    // The builder validates direct (non-relation) columns against the model's table schema
+    // and should throw an InvalidSearchValue if the column does not exist.
+    expect(fn () => Appointment::query()->jsonSearch('{"appointment.nonexistent": "value"}'))
+        ->toThrow(\App\Exceptions\InvalidSearchValue::class);
+});
+
+
