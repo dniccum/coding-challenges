@@ -1,0 +1,35 @@
+Source-Available Evaluation License (SAEL-1.0)
+
+Copyright (c) 2025 Doug Niccum
+
+Permission
+You are granted a limited, non-exclusive, non-transferable, revocable license to:
+- view and download the source code of this repository; and
+- compile, run, and test the code solely for your own internal evaluation purposes.
+
+Restrictions
+Except as expressly permitted above, you may NOT:
+- use the code, in whole or in part, in any production environment or for any purpose other than internal evaluation or testing;
+- copy, modify, adapt, translate, create derivative works of, or otherwise prepare the code (other than transient changes strictly necessary to build and run tests);
+- redistribute, publish, sublicense, sell, rent, lease, lend, host, or otherwise make the code or any portion of it available to any third party;
+- incorporate any portion of the code into other software, libraries, services, or works;
+- use the code to train, fine-tune, or improve machine learning models;
+- remove or alter any copyright, license, or attribution notices.
+
+Ownership
+All rights, title, and interest in and to the code remain with the copyright holders and/or contributors. No rights are granted by implication, estoppel, or otherwise.
+
+Termination
+This license terminates automatically if you breach any term. Upon termination, you must cease all use and delete all copies in your possession or control.
+
+No Warranty
+THE CODE IS PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+
+Limitation of Liability
+IN NO EVENT WILL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE CODE OR THE USE OR OTHER DEALINGS IN THE CODE.
+
+Applicable Law
+This license will be governed by and construed in accordance with the laws applicable in your jurisdiction, without regard to conflict of laws principles.
+
+Contact
+For uses outside the scope of this license (including any form of reuse, modification, or distribution), please contact the copyright holders to request a separate commercial license.
