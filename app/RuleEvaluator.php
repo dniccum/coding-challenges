@@ -73,8 +73,6 @@ class RuleEvaluator
             return false;
         }
 
-        // Resolve the field value. Supports dot-notation and zero-argument method invocations via reflection
-        // when a segment ends with "()", e.g. "isStaff()" or "profile.isActive()".
         $actual = self::resolveValue($user, $field);
 
         return self::compare($actual, $operator, $expected);
@@ -172,7 +170,6 @@ class RuleEvaluator
     protected static function greaterThan(mixed $a, mixed $b, ?float $aNum, ?float $bNum): bool
     {
         if ($a instanceof DateTimeInterface && $b instanceof DateTimeInterface) {
-//            dd($a->getTimestamp(), $b->getTimestamp(), $a->getTimestamp() > $b->getTimestamp());
             return $a->getTimestamp() > $b->getTimestamp();
         }
         if ($aNum !== null && $bNum !== null) {
