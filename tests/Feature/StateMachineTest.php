@@ -70,10 +70,10 @@ it('transitions correctly from string values and returns the correct state class
     $appointment = Appointment::factory()->create();
 
     Event::fake();
-    expect($appointment->transitionTo('draft'))->toBeInstanceOf(DraftModelRevisionState::class);
-    expect($appointment->transitionTo('submitted'))->toBeInstanceOf(SubmittedModelRevisionState::class);
-    expect($appointment->transitionTo('approved'))->toBeInstanceOf(ApprovedModelRevisionState::class);
-    expect($appointment->transitionTo('rejected'))->toBeInstanceOf(RejectedModelRevisionState::class);
+    expect($appointment->transitionTo('draft'))->toBeInstanceOf(DraftModelRevisionState::class)
+        ->and($appointment->transitionTo('submitted'))->toBeInstanceOf(SubmittedModelRevisionState::class)
+        ->and($appointment->transitionTo('approved'))->toBeInstanceOf(ApprovedModelRevisionState::class)
+        ->and($appointment->transitionTo('rejected'))->toBeInstanceOf(RejectedModelRevisionState::class);
 
     Event::assertDispatched(ModelTransitioning::class);
     Event::assertDispatched(ModelTransitioned::class);
