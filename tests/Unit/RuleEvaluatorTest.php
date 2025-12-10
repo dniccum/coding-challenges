@@ -1,6 +1,6 @@
 <?php
 
-use App\RuleEvaluator;
+use App\Library\RuleEvaluator;
 use Carbon\CarbonImmutable;
 use Illuminate\Contracts\Auth\Authenticatable;
 
