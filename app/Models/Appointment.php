@@ -3,18 +3,18 @@
 namespace App\Models;
 
 use App\Builder\NestedSearchBuilder;
+use App\Enums\RevisionState;
 use App\Enums\Status;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Attributes\UseEloquentBuilder;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Query\Builder as BaseQueryBuilder;
 
 #[UseEloquentBuilder(NestedSearchBuilder::class)]
 class Appointment extends Model
 {
     /** @use HasFactory<\Database\Factories\AppointmentFactory> */
-    use HasFactory;
+    use HasFactory, UsesRevisionState;
 
     /**
      * The attributes that are mass assignable.
@@ -39,6 +39,7 @@ class Appointment extends Model
         return [
             'date' => 'date',
             'status' => Status::class,
+            'state' => RevisionState::class,
         ];
     }
 
