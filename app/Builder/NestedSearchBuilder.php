@@ -4,7 +4,6 @@ namespace App\Builder;
 
 use App\Exceptions\InvalidSearchValue;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Support\Arr;
 
 class NestedSearchBuilder extends Builder
 {
@@ -26,12 +25,10 @@ class NestedSearchBuilder extends Builder
      * Appointment::query()->jsonSearch('{"patient.name": "Alan Roth", "appointment.status": "confirmed", "patient.city": "Dallas"}');
      * </code>
      *
-     * @param array|string $rules JSON string or array containing search rules.
-     * @param string $boolean Logical operator ('and' or 'or') to combine conditions.
+     * @param  array|string  $rules  JSON string or array containing search rules.
+     * @param  string  $boolean  Logical operator ('and' or 'or') to combine conditions.
      *
-     * @return static
      * @throws InvalidSearchValue|\Throwable if the rule format or column is invalid.
-     *
      */
     public function jsonSearch(array|string $rules, string $boolean = 'and'): static
     {
@@ -66,7 +63,7 @@ class NestedSearchBuilder extends Builder
             } else {
                 // Since this is not a relation, check for a direct column match
                 $availableColumns = \DB::getSchemaBuilder()->getColumnListing($this->model->getTable());
-                throw_if(!in_array($column, $availableColumns), InvalidSearchValue::class, "The column '$column' does not exist in the model {$this->model->getTable()}");
+                throw_if(! in_array($column, $availableColumns), InvalidSearchValue::class, "The column '$column' does not exist in the model {$this->model->getTable()}");
                 // Perform a direct match
                 $this->where($column, $value);
             }

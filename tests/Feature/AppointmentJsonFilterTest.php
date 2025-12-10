@@ -37,5 +37,3 @@ it('throws an error when a non-existent direct column is provided', function () 
     expect(fn () => Appointment::query()->jsonSearch('{"appointment.nonexistent": "value"}'))
         ->toThrow(\App\Exceptions\InvalidSearchValue::class);
 });
-
-
